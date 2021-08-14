@@ -6,21 +6,23 @@ def encrypt():
     generate_Key()
     print("What would you like to encrypt?")
     message = input()
-    encrypt_Message(message)
+    encrypted_Message = encrypt_Message(message)
+    return encrypted_Message
 
 
-def decrypt():
-    decrypt_Message(b'gAAAAABhGBtBeFEPA0xKXRuHvD_Mhew72YGI3N_CCKJCbNQXIm4Ez4cthwI0oUhfBpe-tsYUosUyhEXLYtiefKl_fvDBl74NLw==')
+def decrypt(encrypted_Message):
+    decrypt_Message(encrypted_Message)
 
 
 def main():
+    encrypted_Message = ''
     while True:
         print("- encrypt\n- decrypt")
         choice = input('>')
         if choice.lower() == "encrypt":
-            encrypt()
+            encrypted_Message = encrypt()
         elif choice.lower() == "decrypt":
-            decrypt()
+            decrypt(encrypted_Message)
         else:
             exit()
 

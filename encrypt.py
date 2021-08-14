@@ -17,3 +17,4 @@ def encrypt_Message(message):
     f = Fernet(key)
     encrypted_Message = f.encrypt(encoded_Message)
     print(encrypted_Message)
+    return encrypted_Message
